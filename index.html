@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Woltless</title>
+<meta name="description" content="תחרות בין חברים: מי מוציאה הכי מעט על וולט עד סוף התחרות.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">דילוג לתוכן</a>
+
+<header class="app-bar">
+  <div class="container app-bar__inner">
+    <a class="wordmark" href="#/competition" dir="ltr" aria-label="Woltless, לעמוד התחרות"><span class="wordmark__mark" aria-hidden="true"></span>Woltless</a>
+    <nav class="tabs--top" aria-label="ניווט ראשי">
+      <a href="#/competition" data-tab="competition" aria-current="page">התחרות</a>
+      <a href="#/expenses" data-tab="expenses">ההוצאות שלי</a>
+    </nav>
+    <button class="btn btn--soft" type="button" data-open="invite">הזמנת חברים</button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="container view" data-view="competition" aria-labelledby="comp-title">
+    <div class="view-head">
+      <div>
+        <h1 class="view-title" id="comp-title" data-bind="compName">האתגר של החבר׳ה</h1>
+        <p class="view-sub" data-bind="compMeta">1.10 עד 31.10, פרס: שובר וולט ₪100</p>
+      </div>
+      <button class="btn btn--soft" type="button" data-open="competition">תחרות חדשה</button>
+    </div>
+
+    <div class="progress">
+      <div class="progress__track" role="progressbar" aria-label="התקדמות התחרות" aria-valuemin="0" aria-valuemax="31" aria-valuenow="23" data-bind="progressBar">
+        <div class="progress__fill" style="--share: 0.74"></div>
+      </div>
+      <p class="progress__label"><span data-bind="dayLabel">יום 23 מתוך 31</span><span data-bind="daysLeft">נשארו 8 ימים</span></p>
+    </div>
+
+    <div class="food-strip" aria-hidden="true" dir="ltr">
+      <div class="food-strip__track" data-region="foodStrip"></div>
+    </div>
+
+    <div class="layout layout--competition">
+      <section class="standing" aria-labelledby="standing-title" data-region="standing">
+        <div class="standing__top">
+          <p class="standing__rank" aria-hidden="true"><span class="standing__num">2</span><span class="standing__of">מתוך 5</span></p>
+          <h2 class="standing__title" id="standing-title">את במקום השני</h2>
+        </div>
+        <div class="standing__plate">
+          <p class="standing__line">נועה בראש, בפער של ₪47. עוד ₪78 של הזמנות ואת משתווה לעומר.</p>
+          <dl class="standing__facts">
+            <div><dt>הוצאת עד עכשיו</dt><dd>₪132</dd></div>
+            <div><dt>הזמנות</dt><dd>3</dd></div>
+          </dl>
+          <button class="btn btn--primary btn--wide" type="button" data-open="order">הוספת הזמנה</button>
+        </div>
+      </section>
+
+      <section class="board" aria-labelledby="board-title">
+        <div class="section-head">
+          <h2 class="section-title" id="board-title">מי חוסך הכי הרבה?</h2>
+          <p class="section-note">מקום 1 הוציא הכי מעט על וולט.</p>
+        </div>
+        <div data-region="board">
+          <ol class="board__list">
+            <li class="row row--leader"><span class="row__rank">1</span><span class="row__avatar" aria-hidden="true">נ</span><span class="row__who"><span class="row__name">נועה</span><span class="row__detail">2 הזמנות</span></span><span class="row__bar" aria-hidden="true"><span class="row__fill" style="--share: 0.16"></span></span><span class="row__amount">₪85</span></li>
+            <li class="row row--me"><span class="row__rank">2</span><span class="row__avatar" aria-hidden="true">ל</span><span class="row__who"><span class="row__name">ליאור (את)</span><span class="row__detail">3 הזמנות</span></span><span class="row__bar" aria-hidden="true"><span class="row__fill" style="--share: 0.25"></span></span><span class="row__amount">₪132</span></li>
+            <li class="row"><span class="row__rank">3</span><span class="row__avatar" aria-hidden="true">ע</span><span class="row__who"><span class="row__name">עומר</span><span class="row__detail">4 הזמנות</span></span><span class="row__bar" aria-hidden="true"><span class="row__fill" style="--share: 0.4"></span></span><span class="row__amount">₪210</span></li>
+            <li class="row"><span class="row__rank">4</span><span class="row__avatar" aria-hidden="true">ד</span><span class="row__who"><span class="row__name">דניאל</span><span class="row__detail">6 הזמנות</span></span><span class="row__bar" aria-hidden="true"><span class="row__fill" style="--share: 0.66"></span></span><span class="row__amount">₪345</span></li>
+            <li class="row"><span class="row__rank">5</span><span class="row__avatar" aria-hidden="true">ר</span><span class="row__who"><span class="row__name">רוני</span><span class="row__detail">9 הזמנות</span></span><span class="row__bar" aria-hidden="true"><span class="row__fill" style="--share: 1"></span></span><span class="row__amount">₪520</span></li>
+          </ol>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="container view" data-view="expenses" aria-labelledby="exp-title" hidden>
+    <div class="view-head">
+      <div>
+        <h1 class="view-title" id="exp-title">ההוצאות שלי</h1>
+        <p class="total" data-bind="myTotal">₪132</p>
+        <p class="total-meta" data-bind="myMeta">3 הזמנות, ממוצע ₪44 להזמנה</p>
+      </div>
+      <button class="btn btn--primary" type="button" data-open="order">הוספת הזמנה</button>
+    </div>
+
+    <div class="layout layout--expenses">
+      <section aria-labelledby="chart-title">
+        <div class="section-head">
+          <h2 class="section-title" id="chart-title">לאורך התחרות</h2>
+          <p class="section-note">כמה הוצאת בכל שבוע.</p>
+        </div>
+        <figure class="chart" data-region="chart"></figure>
+      </section>
+
+      <section aria-labelledby="history-title">
+        <div class="section-head">
+          <h2 class="section-title" id="history-title">ההזמנות שלי</h2>
+        </div>
+        <div data-region="history"></div>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="app-foot">
+  <div class="container app-foot__inner">
+    <p>נתוני הדגמה. ההזמנות שלך נשמרות רק בדפדפן הזה.</p>
+    <div class="demo">
+      <label for="demo-state">מצב תצוגה</label>
+      <select id="demo-state">
+        <option value="full">רגיל</option>
+        <option value="loading">טעינה</option>
+        <option value="empty">ריק</option>
+        <option value="error">שגיאה</option>
+      </select>
+      <button class="btn btn--quiet" type="button" data-action="reset">איפוס הנתונים</button>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabs--bottom" aria-label="ניווט ראשי">
+  <a href="#/competition" data-tab="competition" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 20V11M10 20V5M16 20v-7M21 20H3"/></svg>
+    התחרות
+  </a>
+  <a href="#/expenses" data-tab="expenses">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg>
+    ההוצאות שלי
+  </a>
+</nav>
+
+<dialog class="sheet" id="sheet-order" aria-labelledby="order-title">
+  <form class="sheet__body" method="dialog" novalidate>
+    <div class="sheet__head">
+      <div>
+        <h2 class="sheet__title" id="order-title">הזמנה חדשה</h2>
+        <p class="sheet__lead">הסכום נכנס לטבלה מיד אחרי השמירה.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="סגירה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="field">
+      <label for="order-place">ממה הזמנת?</label>
+      <input id="order-place" name="place" type="text" autocomplete="off" required aria-describedby="order-place-error">
+      <div class="chips" role="group" aria-label="מסעדות אחרונות" data-bind="chips"></div>
+      <p class="field__error" id="order-place-error" hidden>צריך לכתוב ממה הזמנת.</p>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="order-amount">סכום</label>
+        <div class="field__money">
+          <span aria-hidden="true">₪</span>
+          <input id="order-amount" name="amount" type="text" inputmode="decimal" autocomplete="off" required aria-describedby="order-amount-error">
+        </div>
+        <p class="field__error" id="order-amount-error" hidden>סכום בין 1 ל־2000.</p>
+      </div>
+      <div class="field">
+        <label for="order-date">תאריך</label>
+        <input id="order-date" name="date" type="date" required aria-describedby="order-date-error">
+        <p class="field__error" id="order-date-error" hidden>תאריך בתוך התחרות, עד היום.</p>
+      </div>
+    </div>
+
+    <div class="sheet__actions">
+      <button class="btn btn--primary btn--wide" type="submit" data-bind="orderSubmit">הוספה לטבלה</button>
+      <button class="btn btn--quiet btn--wide" type="button" data-close>ביטול</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog class="sheet" id="sheet-competition" aria-labelledby="new-title">
+  <form class="sheet__body" method="dialog" novalidate>
+    <div class="sheet__head">
+      <div>
+        <h2 class="sheet__title" id="new-title">תחרות חדשה</h2>
+        <p class="sheet__lead">תמיד על וולט. מי שמוציאה הכי מעט עד הסוף מנצחת.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="סגירה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="field">
+      <label for="new-name">שם התחרות</label>
+      <input id="new-name" name="name" type="text" autocomplete="off" required placeholder="למשל: נובמבר בלי משלוחים" aria-describedby="new-name-error">
+      <p class="field__error" id="new-name-error" hidden>צריך לתת לתחרות שם.</p>
+    </div>
+
+    <div class="field">
+      <fieldset>
+        <legend>משך</legend>
+        <div class="segmented" role="radiogroup" aria-label="משך התחרות" style="margin-top: 4px">
+          <button type="button" role="radio" aria-checked="false" data-duration="7">שבוע</button>
+          <button type="button" role="radio" aria-checked="true" data-duration="30">חודש</button>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label for="new-start">מתחילה ב־</label>
+        <input id="new-start" name="start" type="date" required>
+      </div>
+      <div class="field">
+        <label for="new-prize">פרס</label>
+        <div class="field__money">
+          <span aria-hidden="true">₪</span>
+          <input id="new-prize" name="prize" type="text" inputmode="numeric" autocomplete="off" placeholder="100">
+        </div>
+      </div>
+    </div>
+    <p class="field__hint" data-bind="newEnd">מסתיימת ב־29.10</p>
+
+    <div class="field">
+      <p class="field__hint">משתתפות</p>
+      <ul class="people"><li data-bind="meName">ליאור (את)</li></ul>
+      <p class="field__hint">אחרי היצירה תקבלי קישור לשלוח לחברים.</p>
+    </div>
+
+    <div class="sheet__actions">
+      <button class="btn btn--primary btn--wide" type="submit">יצירת התחרות</button>
+      <button class="btn btn--quiet btn--wide" type="button" data-close>ביטול</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog class="sheet" id="sheet-invite" aria-labelledby="invite-title">
+  <div class="sheet__body">
+    <div class="sheet__head">
+      <div>
+        <h2 class="sheet__title" id="invite-title">הזמנת חברים</h2>
+        <p class="sheet__lead">שלחי את הקישור לקבוצה. מי שנכנסת דרכו מצטרפת לטבלה.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="סגירה">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="field">
+      <label for="invite-link">קישור לתחרות</label>
+      <input id="invite-link" type="text" readonly dir="ltr">
+    </div>
+    <div class="sheet__actions">
+      <button class="btn btn--primary btn--wide" type="button" data-action="copy">העתקת הקישור</button>
+      <button class="btn btn--quiet btn--wide" type="button" data-action="share" hidden>שיתוף</button>
+    </div>
+  </div>
+</dialog>
+
+<div class="toast" role="status" aria-live="polite" hidden>
+  <span data-bind="toastText"></span>
+  <button class="link-btn" type="button" data-action="undo" hidden>ביטול</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

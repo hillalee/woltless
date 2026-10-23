@@ -1,0 +1,33 @@
+:root {
+  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
+  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.25rem; --text-xl: 1.5rem; --text-2xl: 2.25rem; --text-3xl: 3rem; --text-figure: 4.5rem; --text-rank: 8.5rem;
+  --text-display-s: 1.5rem; --text-display: 2.25rem; --text-section: 1.375rem; --text-title: 1rem; --text-lead: 1rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+  --color-error: oklch(54.9% 0.189 31); --color-success: oklch(52.9% 0.117 156);
+  --container: 1120px; --gutter: 40px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
+
+  /* Page is a cool grey, content sits on white plates */
+  --color-paper: oklch(96.9% 0.003 248); --color-surface: oklch(100% 0 0);
+  --color-paper-2: oklch(94.6% 0.004 255); --color-paper-3: oklch(91.8% 0.006 262);
+  --color-ink: oklch(24.8% 0.008 275); --color-ink-2: oklch(39.7% 0.015 281); --color-muted: oklch(53.3% 0.014 281);
+  --color-rule: oklch(92.2% 0.006 265);
+
+  /* Delivery blue: fills and large type only; brand-ink carries small text and buttons */
+  --color-brand: oklch(66% 0.146 238); --color-brand-ink: oklch(53.4% 0.124 241);
+  --color-brand-deep: oklch(58% 0.14 240); --color-brand-glow: oklch(73% 0.125 234);
+  --color-brand-mid: oklch(83% 0.075 232); --color-brand-soft: oklch(95.7% 0.021 228);
+  --color-accent: var(--color-brand-ink); --color-accent-ink: oklch(100% 0 0); --color-focus: var(--color-brand-ink);
+  --color-crown: oklch(84.8% 0.156 82);
+
+  /* Avatar fills, all carry ink initials above 11:1 */
+  --avatar-1: oklch(91.6% 0.047 360); --avatar-2: oklch(93.2% 0.09 91); --avatar-3: oklch(91.7% 0.054 156);
+  --avatar-4: oklch(89.4% 0.056 292); --avatar-5: oklch(92.2% 0.039 228);
+
+  --font-display: "Rubik", ui-rounded, system-ui, sans-serif; --font-body: "Rubik", ui-rounded, system-ui, sans-serif; --font-outlier: var(--font-body);
+  --radius-card: 20px; --radius-plate: 16px; --radius-control: 12px; --radius-pill: 999px; --rule-hair: 1px;
+  --shadow-card: 0 1px 2px oklch(24.8% 0.008 275 / 0.05), 0 8px 24px -14px oklch(24.8% 0.008 275 / 0.22);
+  --shadow-lift: 0 2px 4px oklch(24.8% 0.008 275 / 0.06), 0 16px 32px -16px oklch(40% 0.1 240 / 0.45);
+  --tracking-display: -0.02em;
+}
